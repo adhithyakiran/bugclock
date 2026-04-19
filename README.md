@@ -4,7 +4,8 @@
 [![npm version](https://img.shields.io/npm/v/bugclock)](https://www.npmjs.com/package/bugclock)
 [![Python](https://img.shields.io/pypi/pyversions/bugclock)](https://pypi.org/project/bugclock/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Downloads](https://img.shields.io/pypi/dm/bugclock)](https://pypi.org/project/bugclock/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/bugclock)](https://pypi.org/project/bugclock/)
+[![npm Downloads](https://img.shields.io/npm/dm/bugclock)](https://www.npmjs.com/package/bugclock)
 
 > Track exactly how much time your team spends debugging AI-generated code.
 
@@ -14,9 +15,9 @@ Whether you're a solo developer or a 500-person engineering org, **bugclock** gi
 
 ## Why this exists
 
-Claude writes code fast. But debugging that code takes time — time that's invisible in sprint planning, productivity metrics, and AI ROI discussions.
+Claude (and other AI tools) write code fast. But debugging that code takes time — time that's invisible in sprint planning, productivity metrics, and AI ROI discussions.
 
-This tool makes that time visible.
+**bugclock makes that time visible.**
 
 ```
 Total debug time (last 30 days):   143.5 min
@@ -47,7 +48,7 @@ Requires Python 3.8+ or Node.js 16+. Works on macOS, Linux, and Windows.
 cd your-project/
 bugclock init
 
-# 2. Mark Claude-generated files
+# 2. Mark AI-generated files
 bugclock mark src/auth/login.py
 # — or add a comment anywhere in the file —
 # @claude-generated
@@ -66,7 +67,7 @@ bugclock report
 
 ## How it works
 
-### Three ways to detect Claude-generated code
+### Three ways to detect AI-generated code
 
 | Method | Example |
 |---|---|
@@ -78,7 +79,7 @@ bugclock report
 
 After `bugclock init`, a silent **post-commit hook** runs on every commit:
 
-1. Checks if modified files are Claude-generated
+1. Checks if modified files are AI-generated
 2. Looks for fix-related keywords in the commit message (`fix`, `bug`, `patch`, `resolve`…)
 3. Estimates session duration from file modification timestamps
 4. **Auto-records the debug session** — no `start`/`stop` needed
@@ -92,18 +93,18 @@ Your team gets data even when they forget to run any commands.
 ```
 bugclock init                    Set up DB + git hooks in the current repo
 bugclock start                   Begin a debug session
-  -f / --file  <path>                 File(s) being debugged (repeatable)
-  -n / --note  <text>                 Note about the bug
+  -f / --file  <path>              File(s) being debugged (repeatable)
+  -n / --note  <text>              Note about the bug
 bugclock stop                    End the active session
-  --resolved / --abandoned            Outcome (default: resolved)
+  --resolved / --abandoned         Outcome (default: resolved)
 bugclock status                  Show the active session + elapsed time
 bugclock report                  Full analytics dashboard
-  --days  <N>                         Time window in days (default: 30)
+  --days  <N>                      Time window in days (default: 30)
 bugclock sessions                List recent sessions
   --limit  <N>
   --status  resolved|abandoned|active
-bugclock scan                    Find all Claude-generated files in the repo
-bugclock mark <file>             Manually tag a file as Claude-generated
+bugclock scan                    Find all AI-generated files in the repo
+bugclock mark <file>             Manually tag a file as AI-generated
 bugclock export                  Export data as JSON or CSV
   --format  json|csv
   --days  <N>
@@ -116,18 +117,22 @@ bugclock uninstall               Remove git hooks
 ## Report output
 
 ```
-╭─ Claude Debug Tracker  last 30 days ─────────────────────────╮
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  bugclock  · last 30 days
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- ┌────────────┐  ┌────────────┐  ┌────────────┐  ┌────────────┐
- │     12     │  │     10     │  │      2     │  │  143.5 min │
- │   Total    │  │  Resolved  │  │  Abandoned │  │ Total Time │
- └────────────┘  └────────────┘  └────────────┘  └────────────┘
+  Total Sessions:      12
+  Resolved:            10
+  Abandoned:            2
+  Total Time:      143.5 min
+  Avg / Session:    11.9 min
+  Longest:          48.2 min
 
   Daily Debug Time (minutes)
-  2026-04-12   12.3  ████████░░░░░░░░░░░░
-  2026-04-13    0.0  ░░░░░░░░░░░░░░░░░░░░
-  2026-04-14   48.2  ████████████████████
-  2026-04-15    8.5  █████░░░░░░░░░░░░░░░
+  2026-04-12    12.3  ████████░░░░░░░░░░░░
+  2026-04-13     0.0  ░░░░░░░░░░░░░░░░░░░░
+  2026-04-14    48.2  ████████████████████
+  2026-04-15     8.5  █████░░░░░░░░░░░░░░░
 
   Most-Debugged Files
   src/auth/login.py        4 sessions   61.5 min
@@ -141,11 +146,11 @@ bugclock uninstall               Remove git hooks
 
 ### Share the file registry with your team
 
-The file registry is just JSON — commit it so every teammate's tracker stays in sync:
+The registry is a simple JSON file — commit it so every teammate's tracker stays in sync:
 
 ```bash
 git add .claude-tracker/marked_files.json
-git commit -m "chore: mark Claude-generated files for debug tracking"
+git commit -m "chore: mark AI-generated files for debug tracking"
 ```
 
 ### Export for dashboards
@@ -212,7 +217,7 @@ git commit -m "[claude] add user authentication flow"
 
 | Data | Where it lives | Committed? |
 |---|---|---|
-| Session timings | `.claude-tracker/sessions.db` (SQLite) | No — gitignored |
+| Session timings | `.claude-tracker/sessions.json` | No — gitignored |
 | Marked file registry | `.claude-tracker/marked_files.json` | Optional — your choice |
 
 Nothing is ever sent to any server. The tracker is entirely local.
@@ -226,10 +231,23 @@ Pull requests are welcome. To get started:
 ```bash
 git clone https://github.com/adhithyakiran/bugclock
 cd bugclock
+
+# Python
 pip install -e ".[dev]"
+
+# Node.js
+cd npm && npm install
 ```
 
 Please open an issue first for large changes.
+
+---
+
+## Links
+
+- **npm:** https://www.npmjs.com/package/bugclock
+- **PyPI:** https://pypi.org/project/bugclock/
+- **GitHub:** https://github.com/adhithyakiran/bugclock
 
 ---
 
