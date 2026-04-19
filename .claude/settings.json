@@ -6,7 +6,17 @@
       "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/detector.js\")",
       "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/tracker.js\")",
       "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/reporter.js\")",
-      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/hooks.js\")"
+      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/hooks.js\")",
+      "Read(//c/Users/Dell/Documents/GitHub/**)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npm install *)",
+      "Bash(bugclock --version)",
+      "Bash(bugclock --help)",
+      "Bash(bugclock init *)",
+      "Bash(bugclock status *)"
     ]
   }
 }

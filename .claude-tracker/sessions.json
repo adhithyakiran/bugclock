@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "started_at": "2026-04-19T14:39:51.124Z",
+    "ended_at": "2026-04-19T14:40:00.024Z",
+    "status": "resolved",
+    "files": [
+      "npm/src/cli.js"
+    ],
+    "notes": "testing the tracker | all working",
+    "author": "Adhithya Kiran",
+    "source": "manual",
+    "commit_hash": "e7e17560c286e0b6939836a5d561369ef42e6ed8"
+  }
+]
