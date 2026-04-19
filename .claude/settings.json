@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile claude_debug_tracker/storage.py claude_debug_tracker/detector.py claude_debug_tracker/tracker.py claude_debug_tracker/reporter.py claude_debug_tracker/hooks.py claude_debug_tracker/cli.py claude_debug_tracker/_hook_precommit.py claude_debug_tracker/_hook_postcommit.py)",
+      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/storage.js\")",
+      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/detector.js\")",
+      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/tracker.js\")",
+      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/reporter.js\")",
+      "Bash(node --check \"c:/Users/Dell/Documents/GitHub/Claude_Debugg_Tracker/npm/src/hooks.js\")"
+    ]
+  }
+}

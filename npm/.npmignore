@@ -1,0 +1,3 @@
+.claude-tracker/
+*.test.js
+*.spec.js

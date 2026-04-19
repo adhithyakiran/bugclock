@@ -1,0 +1,16 @@
+# Claude Debug Tracker — personal session data (never commit these)
+.claude-tracker/sessions.db
+.claude-tracker/active_session
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+*.egg
+
+# OS
+.DS_Store
+Thumbs.db
