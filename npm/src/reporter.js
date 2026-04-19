@@ -90,18 +90,17 @@ function computeStats(sessions) {
 }
 
 function printMetrics(s) {
-  const box = (label, value, color) =>
-    color(`  ${value}\n  ${chalk.dim(label)}`);
-
-  const cols = [
-    box('Total Sessions',  String(s.total),          chalk.white),
-    box('Resolved',        String(s.resolved),        chalk.green),
-    box('Abandoned',       String(s.abandoned),       chalk.red),
-    box('Total Time',      `${s.totalMin} min`,       chalk.yellow),
-    box('Avg / Session',   `${s.avgMin} min`,         chalk.magenta),
-    box('Longest',         `${s.longestMin} min`,     chalk.white),
+  const metrics = [
+    ['Total Sessions', String(s.total),        chalk.white],
+    ['Resolved',       String(s.resolved),     chalk.green],
+    ['Abandoned',      String(s.abandoned),    chalk.red],
+    ['Total Time',     `${s.totalMin} min`,    chalk.yellow],
+    ['Avg / Session',  `${s.avgMin} min`,      chalk.magenta],
+    ['Longest',        `${s.longestMin} min`,  chalk.white],
   ];
-  console.log(cols.join('   '));
+  metrics.forEach(([label, value, color]) => {
+    console.log(`  ${chalk.dim((label + ':').padEnd(18))} ${color(value)}`);
+  });
   console.log('');
 }
 

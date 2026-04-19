@@ -1,12 +1,20 @@
 {
   "name": "bugclock",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Track debugging time spent on AI-generated code — works in any language repo",
-  "keywords": ["bugclock", "ai", "debugging", "productivity", "developer-tools", "git", "claude"],
+  "keywords": [
+    "bugclock",
+    "ai",
+    "debugging",
+    "productivity",
+    "developer-tools",
+    "git",
+    "claude"
+  ],
   "author": "Adhithya Kiran",
   "license": "MIT",
   "bin": {
-    "bugclock": "./bin/claudetrack.js"
+    "bugclock": "bin/bugclock.js"
   },
   "main": "./src/index.js",
   "engines": {
@@ -19,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adhithyakiran/bugclock"
+    "url": "git+https://github.com/adhithyakiran/bugclock.git"
   },
   "homepage": "https://github.com/adhithyakiran/bugclock#readme",
   "bugs": {
