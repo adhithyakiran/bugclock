@@ -224,7 +224,7 @@ Nothing is ever sent to any server. The tracker is entirely local.
 Pull requests are welcome. To get started:
 
 ```bash
-git clone https://github.com/your-org/bugclock
+git clone https://github.com/adhithyakiran/bugclock
 cd bugclock
 pip install -e ".[dev]"
 ```

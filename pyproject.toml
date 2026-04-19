@@ -28,8 +28,8 @@ dependencies = [
 bugclock = "claude_debug_tracker.cli:cli"
 
 [project.urls]
-Homepage = "https://github.com/your-org/bugclock"
-Issues = "https://github.com/your-org/bugclock/issues"
+Homepage = "https://github.com/adhithyakiran/bugclock"
+Issues = "https://github.com/adhithyakiran/bugclock/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
