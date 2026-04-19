@@ -1,15 +1,132 @@
 [
   {
     "id": 1,
-    "started_at": "2026-04-19T14:39:51.124Z",
-    "ended_at": "2026-04-19T14:40:00.024Z",
+    "started_at": "2026-04-05T09:00:00",
+    "ended_at": "2026-04-05T09:43:00",
     "status": "resolved",
     "files": [
-      "npm/src/cli.js"
+      "src/auth/login.js"
     ],
-    "notes": "testing the tracker | all working",
+    "notes": "JWT expiry bug",
     "author": "Adhithya Kiran",
     "source": "manual",
-    "commit_hash": "e7e17560c286e0b6939836a5d561369ef42e6ed8"
+    "commit_hash": "abc123"
+  },
+  {
+    "id": 2,
+    "started_at": "2026-04-07T14:00:00",
+    "ended_at": "2026-04-07T14:28:00",
+    "status": "resolved",
+    "files": [
+      "src/api/payments.js"
+    ],
+    "notes": "Stripe webhook mismatch",
+    "author": "Adhithya Kiran",
+    "source": "auto",
+    "commit_hash": "def456"
+  },
+  {
+    "id": 3,
+    "started_at": "2026-04-08T10:00:00",
+    "ended_at": "2026-04-08T10:52:00",
+    "status": "resolved",
+    "files": [
+      "src/auth/login.js"
+    ],
+    "notes": "Token refresh race condition",
+    "author": "Adhithya Kiran",
+    "source": "manual",
+    "commit_hash": "ghi789"
+  },
+  {
+    "id": 4,
+    "started_at": "2026-04-10T11:00:00",
+    "ended_at": "2026-04-10T11:19:00",
+    "status": "abandoned",
+    "files": [
+      "src/utils/parser.js"
+    ],
+    "notes": "Could not reproduce",
+    "author": "Adhithya Kiran",
+    "source": "manual",
+    "commit_hash": "jkl012"
+  },
+  {
+    "id": 5,
+    "started_at": "2026-04-12T09:00:00",
+    "ended_at": "2026-04-12T09:35:00",
+    "status": "resolved",
+    "files": [
+      "src/api/payments.js"
+    ],
+    "notes": "Null pointer on empty cart",
+    "author": "Adhithya Kiran",
+    "source": "auto",
+    "commit_hash": "mno345"
+  },
+  {
+    "id": 6,
+    "started_at": "2026-04-14T15:00:00",
+    "ended_at": "2026-04-14T16:02:00",
+    "status": "resolved",
+    "files": [
+      "src/auth/middleware.js"
+    ],
+    "notes": "CORS headers missing",
+    "author": "Adhithya Kiran",
+    "source": "manual",
+    "commit_hash": "pqr678"
+  },
+  {
+    "id": 7,
+    "started_at": "2026-04-15T10:00:00",
+    "ended_at": "2026-04-15T10:22:00",
+    "status": "resolved",
+    "files": [
+      "src/utils/parser.js"
+    ],
+    "notes": "Edge case on empty string",
+    "author": "Adhithya Kiran",
+    "source": "auto",
+    "commit_hash": "stu901"
+  },
+  {
+    "id": 8,
+    "started_at": "2026-04-16T13:00:00",
+    "ended_at": "2026-04-16T13:41:00",
+    "status": "resolved",
+    "files": [
+      "src/api/payments.js"
+    ],
+    "notes": "Decimal rounding error",
+    "author": "Adhithya Kiran",
+    "source": "manual",
+    "commit_hash": "vwx234"
+  },
+  {
+    "id": 9,
+    "started_at": "2026-04-17T09:00:00",
+    "ended_at": "2026-04-17T09:17:00",
+    "status": "resolved",
+    "files": [
+      "src/auth/login.js"
+    ],
+    "notes": "Session timeout too short",
+    "author": "Adhithya Kiran",
+    "source": "auto",
+    "commit_hash": "yza567"
+  },
+  {
+    "id": 10,
+    "started_at": "2026-04-18T14:00:00",
+    "ended_at": "2026-04-18T14:29:00",
+    "status": "resolved",
+    "files": [
+      "src/auth/middleware.js"
+    ],
+    "notes": "Rate limiter off by one",
+    "author": "Adhithya Kiran",
+    "source": "manual",
+    "commit_hash": "bcd890"
   }
 ]
